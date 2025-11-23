@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Montserrat' ,'Times New Roman', Times, serif;
+}
+body {
+    height: 100%;
+    width: 100%;
+    /*background-image: url('bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;*/
+}
+h3 {
+    font-size: 80%;
+}
+.container {
+    height: 70%;
+    width: 30%;
+    position: relative;
+    left: 0;
+    right: auto;
+    top: 15%;
+    bottom: 15%;
+    border-radius: 20px;
+    background-color: #fff;
+}
+.container.singup {
+    height: 90%;
+    top: 5%;
+}
+.container-header {
+    width: 80%;
+    height: auto;
+    position: relative;
+    left: 10%;
+    right: 10%;
+    top: 5%;
+    text-align: center;
+}
+.container-body {
+    height: 60%;
+    width: 80%;
+    position: relative;
+    left: 10%;
+    right: 10%;
+    top: 10%;
+    bottom: auto;
+    text-align: center;
+}
+.container-body .data {
+    position: relative;
+    width: auto;
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    text-align: left;
+}
+.container-body .data.signup {
+    display: flex;
+    flex-direction: row;
+}
+.container-body .data.signup .input-data {
+    width: 47%;
+}
+.container-body .data .input-data {
+    width: 90%;
+    margin: 2px;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #010101;
+}
+.container-body .data span {
+    font-size: 80%;
+    margin-left: 2px;
+}
+.container-body .data .match {
+    color: #00cc66;
+}
+.container-body .data .not-match {
+    color: #000;
+}
+.container-body .data .input-data.signup {
+    background-image: linear-gradient(to bottom right, #c96fec, #5f8adf);
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.7s;
+}
+.container-body .data .input-data.signup:hover {
+    background-image: linear-gradient(to bottom right, #a500e6, #004de6);
+}
+.container-body .data .input-data.submit {
+    background: none;
+    border: 1px solid #a500e6;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.7s;
+}
+.container-body .data .input-data.submit:hover {
+    border-color: #004de6;
+}
+.container-footer {
+    width: 80%;
+    height: auto;
+    position: relative;
+    top: 5%;
+    left: 10%;
+    right: 10%;
+    bottom: auto;
+    font-size: 80%;
+    text-align: center;
+}

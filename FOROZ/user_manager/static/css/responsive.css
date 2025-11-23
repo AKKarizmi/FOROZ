@@ -1,0 +1,13 @@
+@media only screen and (max-width: 768px) {
+    body {
+        background: none;
+    }
+    .container {
+        width: 100%;
+        height: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+    }
+}
