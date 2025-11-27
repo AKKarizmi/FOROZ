@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap-4.4.1-dist/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+  <!-- <script src="{% static 'https://cdn.js' %}delivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js' %}"></script> -->
+    <!-- <script src="{% static 'popper.js' %}"></script>
+    <script src="{% static 'bootstrap.bundle.js' %}"></script> -->
+    <title>Foroz</title>
+</head>
+<style>
+    body{
+        overflow: hidden;
+    }
+.shape-1 {
+    border-radius: 0 50% 50% 50%;
+    background-color: rgb(165, 69, 255);
+    padding: 250px 250px;
+    position: absolute;
+    transition: transform 3s linear;
+}
+.shape-2 {
+    border-radius: 50% 0 50% 50%;
+    background-color: rgb(117, 37, 255);
+    padding: 250px 250px;
+    position: absolute;
+    right: 0;
+    transition: transform 3s linear;
+}
+.super {
+    background-color: rgba(225, 225, 225, 0.7);
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(100px);
+}
+</style>
+<body>
+    <div class="shape-1"></div>
+    <div class="shape-2"></div>
+    
+    <div class="super">
+        <style>
+            .logo {
+                position: absolute;
+                /*border: solid 1px black;*/
+                height: 150px;
+                width: 600px;
+                padding: 0;
+                margin: 40px;
+            }
+        </style>
+        <div class="logo">
+            <img src="{% static 'Logo-H.svg' %}" height="100" style="margin-left: 60px;">
+        </div>
+        <div class="container">
+            <div class="container-header">
+                <h1>Sign Up</h1>
+            </div>
+            <div class="container-body">
+            <form action="{% url 'Registration-Form' %}" method="post">
+                {% csrf_token %}
+                <div class="data">
+                    <h3>Email Address:</h3>
+                    <input type="email" name="email" id="" class="input-data">
+                </div>
+                <div class="data">
+                    <h3>User Name:</h3>
+                    <input type="text" name="username" class="input-data">
+                </div>
+                <div class="data">
+                    <h3>Password:</h3>
+                    <input type="password" name="password" id="password" class="input-data">
+                    <br>
+                    <input type="checkbox" onclick="showFunction()"><span>Show Password</span>
+                    <span class="match" id="match"></span>
+                </div>
+                <div class="data">
+                    <h3>Repeat Password:</h3>
+                    <input type="password" name="re_pass" id="re-pass" class="input-data">
+                </div>
+                <div class="data signup" style="text-align: center;">
+                    <input type="submit" formaction="{% url 'Login-Page' %}" name="" id="" class="input-data submit" value="Login">
+                    <input type="submit" class="input-data signup" value="Create">
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>  
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <script>
+    function randomPositionInside(el) {
+        const elementWidth = el.offsetWidth;
+        const elementHeight = el.offsetHeight;
+
+        const maxX = window.innerWidth - elementWidth;
+        const maxY = window.innerHeight - elementHeight;
+
+        const x = Math.random() * maxX;
+        const y = Math.random() * maxY;
+
+        return { x, y };
+    }
+
+    function animateAll(selector, speed) {
+        const elements = document.querySelectorAll(selector);
+
+        elements.forEach(el => {
+            function move() {
+                const pos = randomPositionInside(el);
+                el.style.transform = `translate(${pos.x}px, ${pos.y}px)`;
+                setTimeout(move, speed);
+            }
+            move();
+        });
+    }
+
+    // Example:
+    animateAll('.shape-1', 5000);
+    animateAll('.shape-2', 5000);
+
+    </script>
+</body>
+</html>

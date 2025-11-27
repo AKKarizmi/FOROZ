@@ -18,13 +18,14 @@ h3 {
     font-size: 80%;
 }
 .container {
-    height: 70%;
+    padding: 40px 10px 40px 10px;
+    height: auto;
     width: 30%;
     position: relative;
     left: 0;
     right: auto;
     top: 15%;
-    bottom: 15%;
+    bottom: auto;
     border-radius: 20px;
     background-color: #fff;
 }
